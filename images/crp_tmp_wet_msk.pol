@@ -1,0 +1,8 @@
+A
+850
+DRAPED_POLYGON
+
+TEXTURE ../images/crp_msk.png
+SCALE 20 20
+SURFACE dirt
+LAYER_GROUP shoulders 0

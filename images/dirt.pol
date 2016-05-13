@@ -1,0 +1,8 @@
+A
+850
+DRAPED_POLYGON
+
+TEXTURE ../images/dirt.png
+SCALE 25 25
+SURFACE grass
+LAYER_GROUP shoulders -3

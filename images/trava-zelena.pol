@@ -1,0 +1,9 @@
+A
+850
+DRAPED_POLYGON
+
+TEXTURE ../images/grass.png
+#SCALE 1024 1024
+SCALE 50 50
+SURFACE grass
+LAYER_GROUP terrain +1

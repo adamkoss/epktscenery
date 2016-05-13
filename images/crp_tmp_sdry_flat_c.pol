@@ -1,0 +1,9 @@
+A
+850
+DRAPED_POLYGON
+
+TEXTURE ../images/crp_tmp.png
+SCALE 3572 3572
+NO_ALPHA
+SURFACE dirt
+LAYER_GROUP shoulders -3

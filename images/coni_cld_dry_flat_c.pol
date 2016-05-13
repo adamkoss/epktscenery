@@ -1,0 +1,8 @@
+A
+850
+DRAPED_POLYGON
+
+TEXTURE ../images/coni.png
+SCALE 1500 1500
+SURFACE dirt
+LAYER_GROUP shoulders -3

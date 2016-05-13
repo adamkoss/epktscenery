@@ -1,0 +1,11 @@
+A
+850
+LINE_PAINT
+
+TEXTURE ../images/inter_road.png
+TEX_WIDTH 512
+SCALE 5 5
+S_OFFSET 0 	0	256	512
+LAYER_GROUP markings 0
+
+MIRROR

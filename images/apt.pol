@@ -1,0 +1,8 @@
+A
+850
+DRAPED_POLYGON
+
+TEXTURE ../images/grass_msk.png
+SCALE 6 6
+SURFACE grass
+LAYER_GROUP terrain +3

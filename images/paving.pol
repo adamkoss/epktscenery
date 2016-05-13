@@ -1,0 +1,8 @@
+A
+850
+DRAPED_POLYGON
+
+TEXTURE ../images/paving.png
+SCALE 0.5 0.5
+LAYER_GROUP markings -1
+SURFACE concrete
