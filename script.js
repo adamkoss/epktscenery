@@ -60,6 +60,37 @@ function loadNews()
 	newsRequest.setRequestHeader('Content-type', 'text/html');
 	newsRequest.send(null);
 }
+
+function loadScreenshots()
+{
+	const nScreenshots = 38;
+	const maxInRow = 3;
+
+	Number.prototype.pad = function(size) {
+		var s = String(this);
+		while (s.length < size)
+			s = "0" + s;
+		return s;
+	}
+
+	var getImg = function(idx) {
+		const screenshotsUrl = "https://raw.githubusercontent.com/adamkoss/epktscenery/screenshots/";
+		var fileName = "Img" + idx.pad(3) + ".jpg";
+		return "<a href='" + screenshotsUrl + fileName + "'><img src='" + screenshotsUrl + "small/" + fileName + "'/></a>";
+	}
+
+	var screenshotsData = "<table align='center' cellspacing='0' cellpadding='4' border='0'><tr>";
+	for (var i = 1; i <= nScreenshots; ++i)
+	{
+		screenshotsData += "<td align='center'>" + getImg(i) + "</td>";
+		if (!(i % maxInRow))
+			screenshotsData += "</tr><tr>";
+	}
+	screenshotsData += "</tr></table>";
+
+	document.getElementById('screenshots').innerHTML = screenshotsData;
+}
+
 function loadPage()
 {
 	var file = '';
@@ -117,6 +148,8 @@ function loadPage()
 					else
 						canInsertNews = true; //Allow insert news later
 				}
+				else if (file == 'screenshots.html')
+					loadScreenshots();
 			}
 			else
 			{
