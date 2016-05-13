@@ -107,9 +107,9 @@ function loadPage()
 		if (subpageRequest.readyState == 4)
 		{
 			var page = document.getElementById('page');
-			page.innerHTML = subpageRequest.responseText;
 			if (subpageRequest.status == 200)
 			{
+				page.innerHTML = subpageRequest.responseText;
 				if (isHome)
 				{
 					if (newsData)
@@ -117,6 +117,20 @@ function loadPage()
 					else
 						canInsertNews = true; //Allow insert news later
 				}
+			}
+			else
+			{
+				//Show error from server without styles
+				var errorStr = subpageRequest.responseText;
+				for (;;)
+				{
+					var idx1 = errorStr.indexOf('<style');
+					var idx2 = errorStr.indexOf('</style>');
+					if (idx1 < 0 || idx2 < 0)
+						break;
+					errorStr = errorStr.slice(0, idx1) + errorStr.slice(idx2 + 8);
+				}
+				page.innerHTML = errorStr;
 			}
 			subpageRequest = null;
 		}
