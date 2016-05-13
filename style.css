@@ -1,0 +1,53 @@
+body {
+	background-color: #cff3ff;
+	margin-right: auto;
+	overflow-y: scroll;
+	margin-left: auto;
+	max-width: 1000px;
+	color: #0d0d0d;
+}
+
+#bar {
+	position: relative;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 60px;
+	display: none;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #00eaff;
+}
+
+.noselect {
+	/* Disable text selection (from StackOverflow) */
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none;   /* Chrome/Safari/Opera */
+	-khtml-user-select: none;    /* Konqueror */
+	-moz-user-select: none;      /* Firefox */
+	-ms-user-select: none;       /* Internet Explorer/Edge */
+	user-select: none;           /* Non-prefixed version, currently not supported by any browser */
+}
+
+.button {
+	transition-duration: 0.15s;
+	background-color: #3aba0e;
+	border: 3px solid #1c6b00;
+	color: white;
+	padding: 4px 10px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	border-radius: 6px;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	cursor: pointer;
+	outline: none;
+	width: 100px;
+}
+.button:hover {
+	background-color: #118855;
+	text-decoration: underline;
+}
+.button:active {
+	background-color: #778855;
+}
