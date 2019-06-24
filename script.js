@@ -63,7 +63,7 @@ function loadNews()
 
 function loadScreenshots()
 {
-	const nScreenshots = 60;
+	const nScreenshots = 84;
 	const maxInRow = 3;
 
 	Number.prototype.pad = function(size) {
