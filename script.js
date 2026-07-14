@@ -1,3 +1,5 @@
+var maintenanceMode = true;
+
 var subpageRequest = null;
 var newsRequest = null;
 
@@ -68,6 +70,26 @@ function loadScreenshots()
 
 function loadPage()
 {
+	if (maintenanceMode)
+	{
+		document.getElementById('bar').style.display = 'none';
+		subpageRequest = new XMLHttpRequest();
+		subpageRequest.onreadystatechange = function() {
+			if (subpageRequest.readyState == 4)
+			{
+				var page = document.getElementById('page');
+				if (subpageRequest.status == 200)
+					page.innerHTML = subpageRequest.responseText;
+				subpageRequest = null;
+			}
+		}
+		subpageRequest.open('GET', 'maintenance.html', true);
+		subpageRequest.setRequestHeader('Content-type', 'text/html');
+		subpageRequest.send(null);
+		return;
+	}
+
+	document.getElementById('bar').style.display = 'block';
 	var file = '';
 	if (window.location.search)
 	{
@@ -154,5 +176,4 @@ function prepareToLoadPage(arg)
 }
 
 window.onpopstate = loadPage;
-document.getElementById('bar').style.display = 'block';
 loadPage();
