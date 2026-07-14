@@ -8,15 +8,14 @@ body {
 }
 
 #bar {
-	position: relative;
+	position: sticky;
 	top: 0;
-	left: 0;
-	right: 0;
 	height: 60px;
 	display: none;
 	margin-left: auto;
 	margin-right: auto;
 	background-color: #00eaff;
+	z-index: 100;
 }
 
 .noselect {

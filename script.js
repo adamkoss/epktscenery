@@ -1,33 +1,8 @@
-var bar = document.getElementById('bar');
-var initialOffset = -1.0;
-
 var subpageRequest = null;
 var newsRequest = null;
 
 var canInsertNews = false;
 var newsData = null;
-
-function documentScrolled()
-{
-	if (initialOffset < 0.0)
-		initialOffset = bar.getBoundingClientRect().top + window.pageYOffset;
-	if (window.pageYOffset < initialOffset)
-	{
-		bar.style.top = 0.0;
-		bar.style.opacity = 1.0;
-	}
-	else
-	{
-		bar.style.top = window.pageYOffset - initialOffset;
-		bar.style.opacity = 0.9;
-	}
-}
-function windowResized()
-{
-	bar.style.top = 0.0;
-	initialOffset = bar.getBoundingClientRect().top + window.pageYOffset;
-	documentScrolled();
-}
 
 function insertNews()
 {
@@ -178,8 +153,6 @@ function prepareToLoadPage(arg)
 	loadPage();
 }
 
-document.onscroll = documentScrolled;
-window.onresize = windowResized;
 window.onpopstate = loadPage;
-bar.style.display = 'block';
+document.getElementById('bar').style.display = 'block';
 loadPage();
